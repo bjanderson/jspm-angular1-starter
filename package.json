@@ -1,0 +1,44 @@
+{
+  "name": "jspm-angular1-starter",
+  "version": "0.0.1",
+  "description": "",
+  "author": "BJ Anderson (http://www.bjspage.com/)",
+  "license": "MIT",
+  "directories": {
+    "test": "test",
+    "baseURL": "client",
+    "packages": "client/jspm_packages"
+  },
+  "scripts": {
+    "start": "nodejs server/devServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "expressPort": 20080,
+    "browsersyncPort": 10080
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "browser-sync": "^2.12.8",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "jspm": "^0.16.34",
+    "nodemon": "^1.9.2",
+    "require-dir": "^0.3.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "client",
+      "test": "test"
+    },
+    "configFile": "client/jspm.config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.5"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}
