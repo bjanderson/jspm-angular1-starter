@@ -1,14 +1,14 @@
 'use strict'
 
 import angular from 'angular'
-import 'ui-router'
+import 'angular-ui-router'
 
 import AppConfig from './app.config'
 import AppCtrl from './app.controller'
 
 const app = angular
   .module('Main', [
-    'HTMLTemplates',
+    // 'HTMLTemplates',
     'ui.router'
   ])
 
