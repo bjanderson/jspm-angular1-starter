@@ -6,9 +6,13 @@ import 'angular-ui-router'
 import AppConfig from './app.config'
 import AppCtrl from './app.controller'
 
+import 'app/modules/html_templates/html_templates.module'
+import Home from 'app/modules/home/home.module'
+
 const app = angular
   .module('Main', [
-    // 'HTMLTemplates',
+    'HTMLTemplates',
+    Home.name,
     'ui.router'
   ])
 

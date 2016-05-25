@@ -1,22 +1,22 @@
-'use strict';
+'use strict'
 
-var gulp = require('gulp'),
-  htmlMin = require('gulp-htmlmin'),
-  ngTemplate = require('gulp-ng-template'),
-  htmlMin_options = {
-    removeComments: true,
-    collapseWhitespace: true,
-    conservativeCollapse: true,
-    collapseInlineTagWhitespace: true
-  };
+const gulp = require('gulp')
+const htmlMin = require('gulp-htmlmin')
+const ngTemplate = require('gulp-ng-template')
+const htmlMinOptions = {
+  removeComments: true,
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  collapseInlineTagWhitespace: true
+}
 
-gulp.task('ngtemplate', function() {
-  return gulp.src(['client/**/*.tpl.html', '!client/jspm_packages{,/**}'])
-    .pipe(htmlMin(htmlMin_options))
+gulp.task('ngtemplate', function () {
+  return gulp.src(['client/app/**/*.tpl.html'])
+    .pipe(htmlMin(htmlMinOptions))
     .pipe(ngTemplate({
       moduleName: 'HTMLTemplates',
       standalone: true,
-      filePath: 'modules/html_templates/html_templates.module.js'
+      filePath: 'app/modules/html_templates/html_templates.module.js'
     }))
-    .pipe(gulp.dest('client'));
-});
+    .pipe(gulp.dest('client'))
+})

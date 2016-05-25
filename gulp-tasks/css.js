@@ -7,18 +7,18 @@ const LessAutoPrefixPlugin = require('less-plugin-autoprefix')
 const LessCleanCssPlugin = require('less-plugin-clean-css')
 const rename = require('gulp-rename')
 
-const less_autoprefix = new LessAutoPrefixPlugin({
+const lessAutoprefix = new LessAutoPrefixPlugin({
   browsers: ['last 2 versions']
 })
 
-const less_clean_css = new LessCleanCssPlugin({
+const lessCleanCss = new LessCleanCssPlugin({
   advanced: true
 })
 
 gulp.task('less', function () {
-  return gulp.src(['client/main.less'])
+  return gulp.src(['client/app/app.less'])
     .pipe(
-      inject(gulp.src(['**/*.less', '!jspm_packages{,/**}'], {
+      inject(gulp.src(['app/**/*.less'], {
         read: false,
         cwd: 'client'
       }), {
@@ -31,8 +31,8 @@ gulp.task('less', function () {
       })
     )
     .pipe(less({
-      plugins: [less_autoprefix, less_clean_css]
+      plugins: [lessAutoprefix, lessCleanCss]
     }))
-    .pipe(rename('main.min.css'))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('client'))
 })

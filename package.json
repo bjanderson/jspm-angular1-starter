@@ -77,6 +77,9 @@
       "describe",
       "expect",
       "it"
+    ],
+    "ignore": [
+      "client/app/modules/html_templates/"
     ]
   }
 }
