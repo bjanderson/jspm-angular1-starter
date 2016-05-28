@@ -17,6 +17,7 @@
     "start": "node server/devServer.js",
     "test": "mocha --compilers js:babel-core/register --require test/setup.js --require ignore-styles --recursive",
     "test:cover": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- ./test --compilers js:babel-core/register --require test/setup.js --require ignore-styles --recursive -R dot",
+    "test:e2e": "protractor",
     "test:watch": "npm test -- --watch -R dot"
   },
   "config": {
@@ -47,7 +48,7 @@
     "jasmine-core": "^2.4.1",
     "jasmine-spec-reporter": "^2.4.0",
     "jsdomify": "^2.1.0",
-    "jspm": "^0.16.34",
+    "jspm": "^0.16.35",
     "karma": "^0.13.22",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-coverage": "^1.0.0",
@@ -57,13 +58,13 @@
     "karma-spec-reporter": "0.0.26",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.2.0",
+    "run-sequence": "^1.2.1",
     "snazzy": "^4.0.0",
-    "standard": "^7.1.0"
+    "standard": "^7.1.1"
   },
   "jspm": {
     "directories": {
@@ -84,9 +85,11 @@
   "standard": {
     "global": [
       "beforeEach",
+      "browser",
       "describe",
       "expect",
-      "it"
+      "it",
+      "jasmine"
     ],
     "ignore": [
       "client/app/modules/html_templates/"
